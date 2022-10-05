@@ -18,6 +18,11 @@ class MainActivity : AppCompatActivity() {
         rollButton.setOnClickListener {
             rollDice()
         }
+
+        var countUpButton: Button = findViewById(R.id.countup_button)
+        countUpButton.setOnClickListener {
+            countUp()
+        }
     }
 
     private fun rollDice() {
@@ -30,5 +35,22 @@ class MainActivity : AppCompatActivity() {
 
         var randomInt: Int = (1..45).random()
         resultText.text = randomInt.toString()
+    }
+
+    private fun countUp() {
+        // 텍스트뷰의 텍스트 변경하기
+        var resultText: TextView = findViewById(R.id.result_text)
+
+        // 이전 텍스트
+        var oldResultText: String = resultText.text.toString()
+        if (oldResultText == "Hello World!") {
+            resultText.text = "1"
+        } else {
+            var oldResultInt: Int = oldResultText.toInt()
+            if (oldResultInt < 45) {
+                oldResultInt++
+                resultText.text = oldResultInt.toString()
+            }
+        }
     }
 }
