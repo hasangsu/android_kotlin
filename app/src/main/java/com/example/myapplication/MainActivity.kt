@@ -23,6 +23,11 @@ class MainActivity : AppCompatActivity() {
         countUpButton.setOnClickListener {
             countUp()
         }
+
+        var resetButton: Button = findViewById(R.id.reset_button)
+        resetButton.setOnClickListener {
+            reset()
+        }
     }
 
     private fun rollDice() {
@@ -52,5 +57,13 @@ class MainActivity : AppCompatActivity() {
                 resultText.text = oldResultInt.toString()
             }
         }
+    }
+
+    private fun reset() {
+        // 텍스트뷰의 텍스트 변경하기
+        var resultText: TextView = findViewById(R.id.result_text)
+
+        // 이전 텍스트를 0으로 변경
+        resultText.text = "0"
     }
 }
