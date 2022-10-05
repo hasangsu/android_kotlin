@@ -1,18 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="center_vertical"
+    tools:context=".MainActivity" >
 
+    <!-- sp는 장치 의 디스플레이 품질과 관계없이 텍스트 크기를 조정하는 척도인 확장 가능한 픽셀 -->
     <TextView
+        android:id="@+id/result_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_gravity="center_horizontal"
+        android:textSize="30sp"
 
-</android.support.constraint.ConstraintLayout>
+        android:text="Hello World!" />
+
+    <!-- id를 지정하면 안드로이드 내부적으로 해당아이디와 어떠한 상수를 매핑함 -->
+    <!-- 상수의 아이디로 각 객체를 찾을 수 있음 -->
+    <Button
+        android:id="@+id/roll_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/roll_label" />
+
+</LinearLayout>
